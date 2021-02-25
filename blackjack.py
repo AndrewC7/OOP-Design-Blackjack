@@ -37,7 +37,8 @@ class Hand:
 
 class Chips:
     def __init__(self):
-        self.total = 1000
+        # private attribute so people can't see my money (or lack of)
+        self.__total = 1000
         self.bet = 0
 
     def won_bet(self):
