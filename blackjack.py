@@ -12,7 +12,12 @@ class Card:
 
 class Deck:
     def __init__(self):
-        self.deck = [Card(suit, value) for suit in ["Diamonds", "Hearts", "Clubs", "Spades"] for value in ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]]
+        self.deck = []
+        
+        for suit in "Diamonds", "Hearts", "Clubs", "Spades":
+            for value in "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A":
+                self.deck = Card(suit, value)
+                print (self.deck)
 
     def shuffle(self):
         if len(self.deck) > 1:
@@ -24,7 +29,7 @@ class Deck:
             return delt_cards
 
     def __repr__(self):
-        return str(self.deck[51]) 
+        return str(self.deck) 
 
 class Hand:
     def __init__(self):
@@ -54,6 +59,7 @@ test_card = Card("Diamonds", "7")
 test_deck = Deck()
 test_shuffle = test_deck.shuffle
 test_hand = Hand()
+test_chips = Chips()
 print("Card:", test_card)
 print("")
 print("Deck:", test_deck)
@@ -63,3 +69,5 @@ print("")
 print("Shuffled Deck:", test_shuffle)
 print("")
 print("Hand:", test_hand)
+print("")
+print("Chips:", test_chips)
